@@ -1,18 +1,16 @@
-const container = document.querySelector('.container');
-const divider = document.querySelector('.divider');
-const imageA = document.querySelector('.image-a');
-const imageB = document.querySelector('.image-b');
+const slider = document.querySelector('.slider');
+const overlay = document.querySelector('.overlay');
+const comparisonSlider = document.querySelector('.comparison-slider');
 
-container.addEventListener('mousemove', (e) => {
-    const containerRect = container.getBoundingClientRect();
-    let offsetX = e.clientX - containerRect.left;
+comparisonSlider.addEventListener('mousemove', (e) => {
+    const rect = comparisonSlider.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
 
-    // Ensure the offsetX stays within the bounds of the container
+    // Ensure the slider stays within the bounds of the container
     if (offsetX < 0) offsetX = 0;
-    if (offsetX > containerRect.width) offsetX = containerRect.width;
+    if (offsetX > rect.width) offsetX = rect.width;
 
-    const percentage = (offsetX / containerRect.width) * 100;
-    divider.style.left = `${percentage}%`;
-    imageA.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-    imageB.style.clipPath = `inset(0 0 0 ${percentage}%)`;
+    const percentage = (offsetX / rect.width) * 100;
+    slider.style.left = `${percentage}%`;
+    overlay.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
 });
