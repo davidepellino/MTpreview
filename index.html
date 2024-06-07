@@ -1,16 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Split View</title>
+    <title>Image Comparison Slider</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <img src="imageA.png" alt="Image A" class="image image-a">
-        <img src="imageB.png" alt="Image B" class="image image-b">
-        <div class="divider"></div>
+    <div class="comparison-slider">
+        <div class="image-wrapper">
+            <img src="imageA.png" alt="Image A" class="image">
+        </div>
+        <div class="image-wrapper overlay">
+            <img src="imageB.png" alt="Image B" class="image">
+        </div>
+        <div class="slider"></div>
     </div>
     <script src="script.js"></script>
 </body>
